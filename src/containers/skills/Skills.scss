@@ -1,0 +1,61 @@
+.skills-content {
+  width: 100%;
+  max-width: 800px;
+  padding: 0 20px;
+}
+
+.skill-name {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--yellow-theme-main-color);
+  text-transform: uppercase;
+  letter-spacing: 0.5;
+  margin: 25px 0px;
+}
+
+.skill-bar {
+  height: 14px;
+  background: var(--yellow-theme-sub-text-color);
+  border-radius: 8px;
+}
+
+.skill-per {
+  height: 14px;
+  background: var(--yellow-theme-main-color);
+  border-radius: 8px;
+  position: relative;
+  animation: fillBars 2.5s 1;
+}
+
+.skill-per::before {
+  content: attr(per);
+  position: absolute;
+  padding: 4px 6px;
+  background: #f1f1f1;
+  border-radius: 8px;
+  font-size: 12px;
+  top: -35px;
+  right: 0;
+  transform: translateX(50%);
+}
+
+.skill-per::after {
+  content: "";
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  background: #f1f1f1;
+  top: -20px;
+  right: 0px;
+  transform: translateX(50%);
+  border-radius: 20px;
+}
+
+@keyframes fillBars {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
